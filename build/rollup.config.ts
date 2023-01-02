@@ -67,7 +67,7 @@ const options: RollupOptions = {
 
 export default [
 	{
-		input: 'src/what-pm.ts',
+		input: 'src/index.ts',
 		output: [
 			{
 				file: pkg.main,

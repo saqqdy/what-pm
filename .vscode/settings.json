@@ -15,6 +15,7 @@
 		"lcov",
 		"picocolors",
 		"pnpm",
+		"reinstaller",
 		"Retryable",
 		"saqqdy",
 		"tscjs",

@@ -1,3 +1,5 @@
+
+
 /**
  * Detects if a project is a workspace project
  */
