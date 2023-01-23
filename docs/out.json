@@ -1,0 +1,249 @@
+{
+	"id": 0,
+	"name": "index.md - v1.0.0",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "index.md",
+	"children": [
+		{
+			"id": 11,
+			"name": "default",
+			"kind": 8388608,
+			"kindString": "Reference",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 119,
+					"character": 39,
+					"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L119"
+				}
+			],
+			"target": 8
+		},
+		{
+			"id": 1,
+			"name": "WhatPMResult",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 4,
+					"name": "isWorkspace",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 10,
+							"character": 1,
+							"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L10"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 2,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 8,
+							"character": 1,
+							"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 3,
+					"name": "version",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 9,
+							"character": 1,
+							"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L9"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						4,
+						2,
+						3
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 7,
+					"character": 17,
+					"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L7"
+				}
+			]
+		},
+		{
+			"id": 8,
+			"name": "whatPM",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 15,
+					"character": 15,
+					"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L15"
+				}
+			],
+			"signatures": [
+				{
+					"id": 9,
+					"name": "whatPM",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 10,
+							"name": "pkgPath",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"id": 1,
+										"name": "WhatPMResult"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						],
+						"name": "Promise",
+						"qualifiedName": "Promise",
+						"package": "typescript"
+					}
+				}
+			]
+		},
+		{
+			"id": 5,
+			"name": "whatPMSync",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 67,
+					"character": 9,
+					"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L67"
+				}
+			],
+			"signatures": [
+				{
+					"id": 6,
+					"name": "whatPMSync",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 7,
+							"name": "pkgPath",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"id": 1,
+								"name": "WhatPMResult"
+							},
+							{
+								"type": "literal",
+								"value": null
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "References",
+			"children": [
+				11
+			]
+		},
+		{
+			"title": "Interfaces",
+			"children": [
+				1
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				8,
+				5
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/saqqdy/what-pm/blob/1ce5c73/src/index.ts#L1"
+		}
+	]
+}
