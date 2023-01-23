@@ -1,9 +1,8 @@
 import { isAbsolute, join } from 'node:path'
-import findYarnWorkspaceRoot from 'find-yarn-workspace-root'
-import { findWorkspaceDir } from '@pnpm/find-workspace-dir'
+import { existsSync } from 'node:fs'
 import { findUp, findUpSync } from 'find-up'
-import { pathExists, pathExistsSync } from 'path-exists'
-import { whichPM, whichPMSync } from './whichPM'
+import { pmInfo, pmInfoSync } from '@node-kit/pm-info'
+import { workspaceRoot, workspaceRootSync } from '@node-kit/workspace-root'
 
 export interface WhatPMResult {
 	name: string
@@ -19,57 +18,48 @@ async function whatPM(pkgPath: string): Promise<WhatPMResult | null> {
 	}
 	// covert to absolute path
 	if (!isAbsolute(pkgPath)) pkgPath = join(cwd, pkgPath)
-	console.info(100, findYarnWorkspaceRoot(pkgPath), await findWorkspaceDir(pkgPath))
-	if (await pathExists(join(pkgPath, 'package-lock.json'))) {
+	const isWorkspace = !!(await workspaceRoot(pkgPath))
+	if (existsSync(join(pkgPath, 'package-lock.json'))) {
 		return {
 			name: 'npm',
 			version: '>=5',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	if (await pathExists(join(pkgPath, 'yarn.lock'))) {
+	if (existsSync(join(pkgPath, 'yarn.lock'))) {
 		return {
 			name: 'yarn',
 			version: '*',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	if (await pathExists(join(pkgPath, 'pnpm-lock.yaml'))) {
+	if (existsSync(join(pkgPath, 'pnpm-lock.yaml'))) {
 		return {
 			name: 'pnpm',
 			version: '>=3',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	if (await pathExists(join(pkgPath, 'shrinkwrap.yaml'))) {
+	if (existsSync(join(pkgPath, 'shrinkwrap.yaml'))) {
 		return {
 			name: 'pnpm',
 			version: '1 || 2',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
 	if (await findUp('pnpm-lock.yaml', { cwd: pkgPath })) {
 		return {
 			name: 'pnpm',
 			version: '>=3',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	try {
-		if (typeof findYarnWorkspaceRoot(pkgPath) === 'string') {
-			return {
-				name: 'yarn',
-				version: '*',
-				isWorkspace: false
-			}
-		}
-	} catch (err) {}
-	const pm = await whichPM(pkgPath)
+	const pm = await pmInfo(pkgPath)
 	return (
 		pm && {
 			name: pm.name,
 			version: pm.version || '*',
-			isWorkspace: false
+			isWorkspace
 		}
 	)
 }
@@ -80,56 +70,48 @@ function whatPMSync(pkgPath: string): WhatPMResult | null {
 	}
 	// covert to absolute path
 	if (!isAbsolute(pkgPath)) pkgPath = join(cwd, pkgPath)
-	if (pathExistsSync(join(pkgPath, 'package-lock.json'))) {
+	const isWorkspace = !!workspaceRootSync(pkgPath)
+	if (existsSync(join(pkgPath, 'package-lock.json'))) {
 		return {
 			name: 'npm',
 			version: '>=5',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	if (pathExistsSync(join(pkgPath, 'yarn.lock'))) {
+	if (existsSync(join(pkgPath, 'yarn.lock'))) {
 		return {
 			name: 'yarn',
 			version: '*',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	if (pathExistsSync(join(pkgPath, 'pnpm-lock.yaml'))) {
+	if (existsSync(join(pkgPath, 'pnpm-lock.yaml'))) {
 		return {
 			name: 'pnpm',
 			version: '>=3',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	if (pathExistsSync(join(pkgPath, 'shrinkwrap.yaml'))) {
+	if (existsSync(join(pkgPath, 'shrinkwrap.yaml'))) {
 		return {
 			name: 'pnpm',
 			version: '1 || 2',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
 	if (findUpSync('pnpm-lock.yaml', { cwd: pkgPath })) {
 		return {
 			name: 'pnpm',
 			version: '>=3',
-			isWorkspace: false
+			isWorkspace
 		}
 	}
-	try {
-		if (typeof findYarnWorkspaceRoot(pkgPath) === 'string') {
-			return {
-				name: 'yarn',
-				version: '*',
-				isWorkspace: false
-			}
-		}
-	} catch (err) {}
-	const pm = whichPMSync(pkgPath)
+	const pm = pmInfoSync(pkgPath)
 	return (
 		pm && {
 			name: pm.name,
 			version: pm.version || '*',
-			isWorkspace: false
+			isWorkspace
 		}
 	)
 }
