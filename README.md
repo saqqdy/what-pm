@@ -24,21 +24,34 @@ Detects what package manager was used for installation
 
 ```bash
 # use pnpm
-$ pnpm install -g what-pm
+$ pnpm install -D what-pm
 
 # use npm
-$ npm install -g what-pm
+$ npm install -D what-pm
 
 # use yarn
-$ yarn global add what-pm
+$ yarn add -D what-pm
 ```
 
 ## Usage
 
-```bash
-what-pm .
-# or
-what-pm webapp/app
+1. use `what-pm` in async mode
+   s
+
+```js
+import { whatPM } from 'what-pm'
+
+whatPM().then(info => {
+  console.log('The package manager is: ', info) // pnpm | null
+})
+```
+
+2. use `what-pm` in sync mode
+
+```js
+import { whatPMSync } from 'what-pm'
+
+console.log('The package manager is: ', whatPMSync()) // pnpm | null
 ```
 
 ## Support & Issues
