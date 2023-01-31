@@ -1,6 +1,6 @@
-[index.md - v1.1.0](README.md) / Exports
+[index.md - v2.0.0](README.md) / Exports
 
-# index.md - v1.1.0
+# index.md - v2.0.0
 
 ## Table of contents
 
@@ -41,7 +41,7 @@ Renames and re-exports [whatPM](modules.md#whatpm)
 
 #### Defined in
 
-[index.ts:15](https://github.com/saqqdy/what-pm/blob/b32867a/src/index.ts#L15)
+[index.ts:15](https://github.com/saqqdy/what-pm/blob/efcb14c/src/index.ts#L15)
 
 ---
 
@@ -61,4 +61,4 @@ Renames and re-exports [whatPM](modules.md#whatpm)
 
 #### Defined in
 
-[index.ts:67](https://github.com/saqqdy/what-pm/blob/b32867a/src/index.ts#L67)
+[index.ts:67](https://github.com/saqqdy/what-pm/blob/efcb14c/src/index.ts#L67)

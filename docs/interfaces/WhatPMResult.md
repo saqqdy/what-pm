@@ -1,4 +1,4 @@
-[index.md - v1.1.0](../README.md) / [Exports](../modules.md) / WhatPMResult
+[index.md - v2.0.0](../README.md) / [Exports](../modules.md) / WhatPMResult
 
 # Interface: WhatPMResult
 
@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[index.ts:10](https://github.com/saqqdy/what-pm/blob/b32867a/src/index.ts#L10)
+[index.ts:10](https://github.com/saqqdy/what-pm/blob/efcb14c/src/index.ts#L10)
 
 ---
 
@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[index.ts:8](https://github.com/saqqdy/what-pm/blob/b32867a/src/index.ts#L8)
+[index.ts:8](https://github.com/saqqdy/what-pm/blob/efcb14c/src/index.ts#L8)
 
 ---
 
@@ -38,4 +38,4 @@
 
 #### Defined in
 
-[index.ts:9](https://github.com/saqqdy/what-pm/blob/b32867a/src/index.ts#L9)
+[index.ts:9](https://github.com/saqqdy/what-pm/blob/efcb14c/src/index.ts#L9)
