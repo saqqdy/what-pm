@@ -1,8 +1,8 @@
 import { isAbsolute, join } from 'node:path'
 import { existsSync } from 'node:fs'
 import { findUp, findUpSync } from 'find-up'
-import { pmInfo, pmInfoSync } from '@node-kit/pm-info'
-import { workspaceRoot, workspaceRootSync } from '@node-kit/workspace-root'
+import { pmInfo, pmInfoSync } from 'pm-info'
+import { workspaceRoot, workspaceRootSync } from 'workspace-root'
 
 export interface WhatPMResult {
 	name: string
