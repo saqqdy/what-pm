@@ -2,6 +2,8 @@
 
 # what-pm
 
+> This project has been migrated to [what-pm](https://github.com/saqqdy/node-kit/tree/master/packages/what-pm#readme)
+
 Detects what package manager was used for installation
 
 [![NPM version][npm-image]][npm-url]
